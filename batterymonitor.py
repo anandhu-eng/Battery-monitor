@@ -4,13 +4,15 @@ from notifypy import Notify         #to show notification
 import time
 import os
 
+#to get the current path
+curr_path=os.getcwd()
 
 #notification params initialisiing
 notification = Notify()
 notification.title = "Intelligent battery monitor"
+print(curr_path+"/pics/icon.png")
+notification.icon = curr_path+"/pics/icon.png"
 
-#to get the current path
-curr_path=os.getcwd()
 
 
   
@@ -32,7 +34,7 @@ while(True):
         notification.audio = curr_path+"/audio/mixkit-wrong-answer-fail-notification-946.wav"
         notification.send()
         time.sleep(300)
-    elif(battery.percent>55):
+    elif(battery.percent>71):
         notification.message = "Batery percentage higher than set limit!\n Plug out for better battery life."
         notification.audio = curr_path+"/audio/mixkit-positive-notification-951.wav"
         notification.send()
