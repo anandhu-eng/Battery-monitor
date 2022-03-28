@@ -34,7 +34,7 @@ while(True):
         notification.audio = curr_path+"/audio/mixkit-wrong-answer-fail-notification-946.wav"
         notification.send()
         time.sleep(300)
-    elif(battery.percent>71):
+    elif(battery.percent>80):
         notification.message = "Batery percentage higher than set limit!\n Plug out for better battery life."
         notification.audio = curr_path+"/audio/mixkit-positive-notification-951.wav"
         notification.send()
