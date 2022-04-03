@@ -31,7 +31,7 @@ while(True):
     # returns a tuple
     # put inside the while loop to ensure that the current value gets stored in the tuple
     battery = psutil.sensors_battery()
-    if(battery.percent<25):
+    if(battery.percent<25 and battery.power_plugged==False):
         notification.message = "Batery percentage down than set limit!\n Plug in for better battery life."
         notification.audio ="/home/user/Desktop/Battery-monitor/audio/mixkit-wrong-answer-fail-notification-946.wav"
         notification.send()
